@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自定义属性</title>
+</head>
+<body>
+  <div data-id="1" data-na="自定义属性"></div>
+  <script>
+    //一律以data-开头
+    const div=  document.querySelector('div')
+    //使用.dataset获取自定义集合,然后.属性名得到值
+    console.log(div.dataset.id)//
+    console.log(div.dataset.na)
+  </script>
+</body>
+</html>
