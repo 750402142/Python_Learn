@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 3000px;
+    }
+    div{
+      display: none;
+      overflow:scroll;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div>
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+    我这里面有很多字
+  </div>
+  <script>
+    //页面一打开滚动条就在一个位置
+    document.documentElement.scrollTop = 1000
+    const div = document.querySelector('div')
+    // div.addEventListener('scroll',function(){
+    //   //scrollTop表示顶部被卷走的距离
+    //   console.log(div.scrollTop)
+    // })
+    window.addEventListener('scroll',function(){
+      //被滚动的距离
+      // 必须写到里面一直获得最新的值
+      n =  document.documentElement.scrollTop
+      if(n>=100){
+          div.style.display = 'block'
+      }
+    })
+  </script>
+</body>
+</html>
