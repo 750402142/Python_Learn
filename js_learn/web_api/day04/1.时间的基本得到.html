@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 20px;
+      background-attachment: pink;
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <script>
+    const div = document.querySelector('div')
+    function getMyTime(){
+        const date = new Date()
+        let h = date.getHours()
+        let m = date.getMinutes()
+        let s = date.getSeconds()
+        h = h>10?h:'0' + h
+        m = m>10?m:'0' + m
+        s = s>10?s:'0' + s
+        return `时分秒为:${h}:${m}:${s}`
+    }
+    // 使用定时器让时间一直动
+    div.innerHTML = getMyTime()//不设置这个会有调用回调函数的一秒空白期
+    setInterval(function(){
+        div.innerHTML = getMyTime()
+    },1000)
+
+    //快速获得时间的方法
+    //
+  </script>
+  
+</body>
+</html>
