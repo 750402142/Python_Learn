@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span{
+      color:red
+    }
+  </style>
+</head>
+<body>
+  <a href="http:www.baidu.com">支付成功,页面将在<span>5</span>秒后跳转</a>
+  <script>
+    const a = document.querySelector('a')
+    let second = 5
+    let n = setInterval(() => {
+      second--
+      a.innerHTML = `支付成功,页面将在<span>${second}</span>秒后跳转`
+      if(second === 0){
+        clearInterval(n)
+        location.href = 'http:www.baidu.com'
+      } 
+    }, 1000);
+  </script>
+</body>
+</html>

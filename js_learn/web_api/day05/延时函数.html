@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 只执行一次 表示多少秒之后执行该函数 如倒计时多少米关闭页面弹出的广告
+    let times = setTimeout(function(){
+      console.log('时间到了');    
+    },2000)
+    // 清除延时函数的方法
+    // let timeout = setTimeout(函数,时间)  生成的timeout 同样是一个数字 表示延时函数的id
+    // clearTimeout(timeout)
+    console.log(times);
+    
+  </script>
+</body>
+</html>
