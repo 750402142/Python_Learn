@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  const str = '我叫王浩强,叫王浩强的人是我'
+  <!-- 定义匹配规则 //里面就是就是规则 -->
+  const rge = /王浩强/
+  console.log(rge.test(str))//能找到就是true 否则就是false
+  console.log(rge.exec(str)) //生成一个数组里面有第一次出现的索引
+
+  </script>
+
+</body>
+</html>
