@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <div class='box'></div>
+  <script>
+    const box= document.querySelector('.box')
+    // 引用style来修改
+    box.style.width='300px'
+    box.style.height = '300px'
+    // 中间有 - 的元素采用小驼峰命名法
+    box.style.backgroundColor = 'hotpink'
+    box.style.border = '2px Solid Blue'
+  </script>
+</body>
+</html>

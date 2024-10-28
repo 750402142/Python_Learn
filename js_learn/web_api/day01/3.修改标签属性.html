@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="./practice/images/1.webp" alt="">
+  <script>
+    // 获取N~M随机数的方法
+    function get_number(N,M){
+      return Math.floor(Math.random()*(M-N+1)+N)
+    }
+    const random = get_number(1,6)
+    const img_d = document.querySelector('img')
+    img_d.src = `./practice/images/${random}.webp`
+  </script>
+</body>
+</html>
