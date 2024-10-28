@@ -223,10 +223,90 @@
      
     })
     //验证用户名
-    const username  = document.querySelector([name=username])
-    username.addEventListener('change',function(){
-      
-    })
+    const username  = document.querySelector('[name=username]')
+    const phone = document.querySelector('[name=phone]')
+    const codes  = document.querySelector('[name=code]')
+    const password  = document.querySelector('[name=password]')
+    const confirm  = document.querySelector('[name=confirm]')
+    console.log(username);
+    username.addEventListener('change',verifyName)
+      function verifyName(){
+        const rge = /^[a-zA-Z0-9-_]{6,10}$/
+      // console.log(username.value);
+      if(!rge.test(username.value)) {
+        username.nextElementSibling.innerHTML = '输入错误'
+        console.log(username.value);
+        
+        return false
+      } 
+      username.nextElementSibling.innerHTML = ''  
+      return true
+      } 
+    // 验证手机号
+    phone.addEventListener('change',verifyPhone)
+      function verifyPhone(){
+        const rge = /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/
+      // console.log(username.value);
+      if(!rge.test(phone.value)) {
+        phone.nextElementSibling.innerHTML = '输入错误'
+        return false
+      }
+      phone.nextElementSibling.innerHTML = ''
+      return true
+      }
+    // 验证短信验证码
+    codes.addEventListener('change',verifyCode)
+      function verifyCode(){
+        const rge = /^\d{6}$/
+      // console.log(username.value);
+      if(!rge.test(codes.value)) {
+        codes.nextElementSibling.innerHTML = '输入错误'
+        return false
+      } 
+      codes.nextElementSibling.innerHTML = ''
+      return true
+      } 
+    // 验证密码
+    password.addEventListener('change',verifyPassword)
+      function verifyPassword(){
+        const rge = /^[a-zA-Z0-9-_]{6,20}$/
+      // console.log(username.value);
+      if(!rge.test(password.value)) {
+        password.nextElementSibling.innerHTML = '输入错误'
+        console.log(password.value);
+        return false
+      } 
+      password.nextElementSibling.innerHTML = ''
+      return true
+      } 
+      //确认密码
+      confirm.addEventListener('change',verifyConfirm)
+      function verifyConfirm(){
+        if(confirm.value != password.value){
+          confirm.nextElementSibling.innerHTML = '两次密码输入不一致'
+          return true
+        }
+          confirm.nextElementSibling.innerHTML = ''
+          return false 
+      }
+
+      const agree= document.querySelector('.icon-queren')
+      agree.addEventListener('click',function(){    
+        this.classList.toggle('icon-queren2')
+      })
+      const form = document.querySelector('form')
+      form.addEventListener('submit',function(e){
+        if(!agree.classList.contains('icon-queren2')){
+          alert('请勾选同意框')
+          e.preventDefault()
+        }
+       if(!verifyName()) e.preventDefault()
+       if(!verifyCode()) e.preventDefault()
+       if(!verifyPhone()) e.preventDefault()
+       if(!verifyPassword()) e.preventDefault()
+       if(!verifyConfirm()) e.preventDefault()
+       
+      })
   </script>
 </body>
 

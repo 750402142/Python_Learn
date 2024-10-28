@@ -1219,7 +1219,26 @@
   </div>
 
   <script>
-
+    const li1 = document.querySelector('.xtx_navs li:first-child')
+    const li2 = li1.nextElementSibling
+    // 渲染函数
+    function render(){
+      const uname = localStorage.getItem('username')
+      if(uname) {
+        li1.innerHTML = `<a href="javascript:;"><i class="iconfont icon-user"> ${uname}</i></a>`
+      li2.innerHTML = `<a href="javascript:;">退出登录</a>`
+      }
+      else{
+        li1.innerHTML = `<a href="./login.html"><i class="iconfont icon-user"> 请先登录</i></a>`
+        li2.innerHTML = `<a href="./register.html">免费注册</a>`
+      }
+    }
+    render()
+    // 点击退出登录
+    li2.addEventListener('click',function(){
+      localStorage.removeItem('username')
+      render()
+    })
 
   </script>
 </body>

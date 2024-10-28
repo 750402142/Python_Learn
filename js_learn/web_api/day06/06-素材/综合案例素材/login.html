@@ -77,7 +77,32 @@
     </div>
   </div>
   <script>
-
+    //tab栏切换
+    const tab_nav = document.querySelector('.tab-nav')
+    const pane = document.querySelectorAll('.tab-pane')
+    const agree = document.querySelector('[name=agree]')
+    const form = document.querySelector('form')
+    const username = document.querySelector('[name=username]')
+    const password = document.querySelector('[name=password]')
+    tab_nav.addEventListener('click',function(e){
+      if(e.target.tagName === 'A'){
+        tab_nav.querySelector('.active').classList.remove('active')
+        e.target.classList.add('active')
+      }
+      for(let i = 0;i<pane.length;i ++){
+        pane[i].style.display = 'none'
+      }
+      pane[e.target.dataset.id].style.display = 'block'
+    })
+    // 登录跳转页面
+    form.addEventListener('submit',function(e){
+      e.preventDefault()
+     if(!agree.checked){
+      return alert('请勾选我同意')
+     }
+     localStorage.setItem('username', username.value)
+    location.href = './index.html'
+    })
   </script>
 </body>
 
