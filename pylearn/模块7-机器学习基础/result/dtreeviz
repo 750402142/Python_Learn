@@ -1,0 +1,95 @@
+
+        digraph G {
+            splines=line;
+            nodesep=0.1;
+            ranksep=.22;
+            rankdir=RL;
+            margin=0.0;
+            graph [label="Dtree 标题测试", labelloc=t, fontname="STsong" fontsize=20 fontcolor="red"];
+            node [margin="0.03" penwidth="0.5" width=.1, height=.1];
+            edge [arrowsize=.4 penwidth="0.3"]
+
+            node4 [margin="0" shape=none label=<<table border="0">
+                    <tr><td CELLPADDING="0" CELLSPACING="0"><font face="STsong" color="#444443" point-size="14"><i>Node 4</i></font></td></tr>
+                    <tr>
+                            <td><img src="C:\Users\wang\AppData\Local\Temp\node4_22580.svg"/></td>
+                    </tr>
+                    </table>>]
+	node2 [margin="0" shape=none label=<<table border="0">
+                    <tr><td CELLPADDING="0" CELLSPACING="0"><font face="STsong" color="#444443" point-size="14"><i>Node 2</i></font></td></tr>
+                    <tr>
+                            <td><img src="C:\Users\wang\AppData\Local\Temp\node2_22580.svg"/></td>
+                    </tr>
+                    </table>>]
+	node0 [margin="0" shape=none label=<<table border="0">
+                    <tr><td CELLPADDING="0" CELLSPACING="0"><font face="STsong" color="#444443" point-size="14"><i>Node 0</i></font></td></tr>
+                    <tr>
+                            <td><img src="C:\Users\wang\AppData\Local\Temp\node0_22580.svg"/></td>
+                    </tr>
+                    </table>>]
+            node4 -> leaf5 [penwidth=0.3 fontname="STsong" color="#444443" label=<> fontcolor="red"]
+	node4 -> leaf6 [penwidth=0.3 fontname="STsong" color="#444443" label=<> fontcolor="red"]
+	
+                    {
+                        rank=same;
+                        leaf5 -> leaf6 [style=invis]
+                    }
+                    
+	node2 -> leaf3 [penwidth=0.3 fontname="STsong" color="#444443" label=<> fontcolor="red"]
+	node2 -> node4 [penwidth=0.3 fontname="STsong" color="#444443" label=<> fontcolor="red"]
+	
+                    {
+                        rank=same;
+                        leaf3 -> node4 [style=invis]
+                    }
+                    
+	node0 -> leaf1 [penwidth=0.3 fontname="STsong" color="#444443" label=<  &le;> fontcolor="red"]
+	node0 -> node2 [penwidth=0.3 fontname="STsong" color="#444443" label=<  &gt;> fontcolor="red"]
+	
+                    {
+                        rank=same;
+                        leaf1 -> node2 [style=invis]
+                    }
+                    
+            leaf1 [margin="0" shape=box penwidth="0" color="red" label=<<table border="0" CELLBORDER="0">
+                <tr><td CELLPADDING="0" CELLSPACING="0"><font face="STsong" color="#444443" point-size="14"><i>Node 1</i></font></td></tr>
+                <tr>
+                        <td><img src="C:\Users\wang\AppData\Local\Temp\leaf1_22580.svg"/></td>
+                </tr>
+                </table>>]
+	leaf3 [margin="0" shape=box penwidth="0" color="red" label=<<table border="0" CELLBORDER="0">
+                <tr><td CELLPADDING="0" CELLSPACING="0"><font face="STsong" color="#444443" point-size="14"><i>Node 3</i></font></td></tr>
+                <tr>
+                        <td><img src="C:\Users\wang\AppData\Local\Temp\leaf3_22580.svg"/></td>
+                </tr>
+                </table>>]
+	leaf5 [margin="0" shape=box penwidth="0" color="red" label=<<table border="0" CELLBORDER="0">
+                <tr><td CELLPADDING="0" CELLSPACING="0"><font face="STsong" color="#444443" point-size="14"><i>Node 5</i></font></td></tr>
+                <tr>
+                        <td><img src="C:\Users\wang\AppData\Local\Temp\leaf5_22580.svg"/></td>
+                </tr>
+                </table>>]
+	leaf6 [margin="0" shape=box penwidth="0" color="red" label=<<table border="0" CELLBORDER="0">
+                <tr><td CELLPADDING="0" CELLSPACING="0"><font face="STsong" color="#444443" point-size="14"><i>Node 6</i></font></td></tr>
+                <tr>
+                        <td><img src="C:\Users\wang\AppData\Local\Temp\leaf6_22580.svg"/></td>
+                </tr>
+                </table>>]
+
+            
+                    subgraph cluster_legend {
+                        style=invis;
+                        legend [penwidth="0" margin="0" shape=box margin="0.03" width=.1, height=.1 label=<
+                        
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td border="0" cellspacing="0" cellpadding="0"><img src="C:\Users\wang\AppData\Local\Temp\legend_22580.svg"/></td>
+                    </tr>
+                </table>
+                
+                        >]
+                    }
+                    
+            
+        }
+            
