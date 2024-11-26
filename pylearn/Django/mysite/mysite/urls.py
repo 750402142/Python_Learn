@@ -18,7 +18,6 @@ from django.shortcuts import render
 from django.urls import path,include,register_converter
 from app01 import views
 
-
 # 定义路由转发器
 class MobileConverter(object):
     regex = '1[3-9]\d{9}'
@@ -36,7 +35,7 @@ urlpatterns = [
     path('article/',include('article.urls')),
 
     # 路由转发,其目的是让不用在path里面写上负责的正则匹配过程
-    path('phone/<mobile:mobile>',views.test),
+    path('phone/<mobile:m>',views.test),#这里左边的mobile对应着上面register_converter(MobileConverter,'mobile')里的mobile,需要一样
 
     path('user/',include('user.urls'))
 ]

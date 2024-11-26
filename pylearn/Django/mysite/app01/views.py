@@ -11,5 +11,5 @@ def now_time(request):
 def converter(request,mobile):
     print('mobile',)
     return HttpResponse(mobile)
-def test(request,mobile):
-    return render(request,'converter.html',{'phone':mobile})
+def test(request,m):
+    return render(request,'converter.html',{'phone':m})
