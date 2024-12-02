@@ -1,0 +1,43 @@
+{% extends 'whole/base.html'%}
+
+{% block content %}
+	 <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>选择课程</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                      <form action="" method="post">
+                          
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>序号</th>
+                          <th>名称</th>
+                          <th>学分</th>
+                          <th>教师</th>
+                          <th>时间</th>
+                          <th>地点</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                            {% for course in courses %}
+                            <tr>
+                                <th><input type="checkbox" value="{{ course.id }}" name="course_id_list"></th>
+                                <th>{{ forloop.counter }}</th>
+                            	<th>{{ course.title }}</th>
+                            	<th>{{ course.credit }}</th>
+                            	<th>{{ course.teacher }}</th>
+                            	<th>{{ course.classTime }}</th>
+                            	<th>{{ course.classAddr }}</th> 
+                            </tr> 
+                            {% endfor %}
+                      </tbody>
+                    </table>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+{% endblock %}

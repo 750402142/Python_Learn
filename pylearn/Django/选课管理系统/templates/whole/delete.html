@@ -1,0 +1,38 @@
+{% extends 'whole/base.html' %}
+
+{% block content %}
+<div class="col-lg-6">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Horizontal Form</h4>
+                </div>
+                <div class="card-body">
+                      <table class="table">
+                      <thead>
+                        <tr>
+                          <th>姓名</th>
+                          <th>年龄</th>
+                          <th>性别</th>
+                          <th>班级</th>
+                        </tr>
+                      </thead>
+                        <tbody>
+                            <tr>
+                                <td>  {{ stu.name }} </td>
+                                <td>  {{ stu.age }} </td>
+                                <td>  {{ stu.sex }} </td>
+                                <td>  {{ stu.clas.name }} </td>
+                            </tr>
+                        </tbody>
+                      </table>
+                  <form class="form-horizontal" action="/student/delete/{{ stu.id }}" method="post">
+                    <div class="form-group row">       
+                      <div class="col-sm-10 offset-sm-2">
+                        <input type="submit" value="确认删除" class="btn btn-danger pull-right">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+{% endblock %}
