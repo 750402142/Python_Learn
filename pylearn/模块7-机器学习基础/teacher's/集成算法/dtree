@@ -1,0 +1,29 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="STsong"] ;
+edge [fontname="STsong"] ;
+0 [label=<脯氨酸 &le; 755.0<br/>gini = 0.658<br/>samples = 100.0%<br/>value = [0.31, 0.407, 0.283]<br/>class = 白酒>, fillcolor="#e3fbed"] ;
+1 [label=<黄酮类 &le; 1.4<br/>gini = 0.482<br/>samples = 65.5%<br/>value = [0.0, 0.595, 0.405]<br/>class = 白酒>, fillcolor="#c0f7d7"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<颜色强度 &le; 3.56<br/>gini = 0.251<br/>samples = 30.1%<br/>value = [0.0, 0.147, 0.853]<br/>class = 红酒>, fillcolor="#975be9"] ;
+1 -> 2 ;
+3 [label=<gini = 0.0<br/>samples = 4.4%<br/>value = [0.0, 1.0, 0.0]<br/>class = 白酒>, fillcolor="#39e581"] ;
+2 -> 3 ;
+4 [label=<gini = 0.0<br/>samples = 25.7%<br/>value = [0.0, 0.0, 1.0]<br/>class = 红酒>, fillcolor="#8139e5"] ;
+2 -> 4 ;
+5 [label=<酒精 &le; 13.495<br/>gini = 0.049<br/>samples = 35.4%<br/>value = [0.0, 0.975, 0.025]<br/>class = 白酒>, fillcolor="#3ee684"] ;
+1 -> 5 ;
+6 [label=<gini = 0.0<br/>samples = 34.5%<br/>value = [0.0, 1.0, 0.0]<br/>class = 白酒>, fillcolor="#39e581"] ;
+5 -> 6 ;
+7 [label=<gini = 0.0<br/>samples = 0.9%<br/>value = [0.0, 0.0, 1.0]<br/>class = 红酒>, fillcolor="#8139e5"] ;
+5 -> 7 ;
+8 [label=<酒精 &le; 12.65<br/>gini = 0.189<br/>samples = 34.5%<br/>value = [0.897, 0.051, 0.051]<br/>class = 啤酒>, fillcolor="#e88f4e"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label=<黄酮类 &le; 0.9<br/>gini = 0.5<br/>samples = 3.5%<br/>value = [0.0, 0.5, 0.5]<br/>class = 白酒>, fillcolor="#ffffff"] ;
+8 -> 9 ;
+10 [label=<gini = 0.0<br/>samples = 1.8%<br/>value = [0.0, 0.0, 1.0]<br/>class = 红酒>, fillcolor="#8139e5"] ;
+9 -> 10 ;
+11 [label=<gini = 0.0<br/>samples = 1.8%<br/>value = [0.0, 1.0, 0.0]<br/>class = 白酒>, fillcolor="#39e581"] ;
+9 -> 11 ;
+12 [label=<gini = 0.0<br/>samples = 31.0%<br/>value = [1.0, 0.0, 0.0]<br/>class = 啤酒>, fillcolor="#e58139"] ;
+8 -> 12 ;
+}
