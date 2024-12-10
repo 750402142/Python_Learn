@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+</head>
+<body>
+<div>
+    用户名<input type="text" class = 'username'>
+    密码<input type="password" class="password">
+    登录<input type="button" class="login_btn">
+    <span class="err"></span>
+</div>
+<script>
+    $.ajax({
+        url:'/get_tokens',
+        success:function (res){
+            console.log(res)
+            localStorage.setItem('tokens', res)
+        }
+    })
+    $(".login_btn").click(function (){
+        $.ajax({
+            url:"/login",
+            type:"POST",
+            data:{
+                csrfmiddlewaretoken:localStorage.getItem('tokens'),
+                username:$(".username").val(),
+                password:$(".password").val()
+            },
+            success: function (res){
+                if(res['login']){
+                    location.href = '/index'//跳转到指定网页
+                }else{
+                    $(".err").html(res['msg'])
+                }
+            }
+        })
+    })
+</script>
+    
+</body>
+</html>
